@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Imágenes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-3"> </div>
+            <div class="col-6">
+                <h1>{{blob_name}}</h1>
+                <hr />
+                <img src="/descargar/{{ blob_name }}" class="img-fluid img-thumbnail rounded" />
+                <br />
+                <br />
+                <a href="/" class="btn btn-success btn-lg bt-block">Volver al Listado</a>
+            </div>
+            <div class="col-3"> </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
