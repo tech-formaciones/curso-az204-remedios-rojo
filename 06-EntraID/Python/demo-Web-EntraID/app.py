@@ -5,9 +5,9 @@ import uuid
 
 from functools import wraps
 
-CLIENT_ID="93ed6ee1-8179-43ff-8b75-a723b766bf92"
-CLIENT_SECRET="QDE8Q~ORhQff6KsLtqbuVNgFV593~ulIVKNxAc5a"
-AUTHORITY="https://login.microsoftonline.com/b553b4ad-a812-4b1d-8023-93468b1c84a0"
+CLIENT_ID="<client id>"
+CLIENT_SECRET="<client secret>"
+AUTHORITY="https://login.microsoftonline.com/<tenant id>"
 REDIRECT_URL="http://localhost:5000/getAToken"
 SCOPE = ["User.Read"]
 
