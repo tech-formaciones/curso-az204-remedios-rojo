@@ -5,9 +5,9 @@ import uuid
 
 from functools import wraps
 
-CLIENT_ID="<client id>"
-CLIENT_SECRET="<client secret>"
-AUTHORITY="https://login.microsoftonline.com/<tenant id>"
+CLIENT_ID="93ed6ee1-8179-43ff-8b75-a723b766bf92"
+CLIENT_SECRET="QDE8Q~ORhQff6KsLtqbuVNgFV593~ulIVKNxAc5a"
+AUTHORITY="https://login.microsoftonline.com/b553b4ad-a812-4b1d-8023-93468b1c84a0"
 REDIRECT_URL="http://localhost:5000/getAToken"
 SCOPE = ["User.Read"]
 
@@ -50,6 +50,23 @@ def login_required(f):
     
     return decorate_function
 
+def requires_role(role_name):
+    def wrapper(f):
+        @wraps(f)
+        def decorate_function(*args, **kwargs):
+            user = session["user"]
+            if not user:
+                return redirect("/login")
+            
+            roles = user.get("roles", [])
+            if role_name not in roles:
+                return render_template("unauthorized.html"), 403
+
+            return f(*args, **kwargs)
+        return decorate_function
+    return wrapper
+    
+
 ############################################################
 
 @app.route("/login")
@@ -82,6 +99,7 @@ def dashboard():
 
 @app.route("/admin")
 @login_required
+@requires_role("Admin")
 def admin():
     return render_template("admin.html", user=session["user"])
 
