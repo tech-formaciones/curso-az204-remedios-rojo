@@ -1,0 +1,14 @@
+[
+  {
+    "id": "d6f1891f-4f3c-4e5d-861f-35b469a9b6b0",
+    "eventType": "Microsoft.EventGrid.SubscriptionValidationEvent",
+    "subject": "",
+    "eventTime": "2025-05-23T08:43:27.128Z",
+    "data": {
+      "validationCode": "ABCD1234EFGH5678",
+      "validationUrl": "https://eventgrid.azure.net:553/eventgridvalidation?id=..."
+    },
+    "dataVersion": "1.0",
+    "metadataVersion": "1"
+  }
+]
